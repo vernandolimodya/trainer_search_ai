@@ -1,10 +1,11 @@
 import psycopg2
 import pandas as pd
-from config import DB_CONFIG
+import os
+from config import POSTGRES_URL
 
 def connect_db():
     """Establishes a connection to PostgreSQL"""
-    return psycopg2.connect(**DB_CONFIG)
+    return psycopg2.connect(POSTGRES_URL)
 
 def fetch_trainers():
     """Fetch trainer bios from PostgreSQL"""
